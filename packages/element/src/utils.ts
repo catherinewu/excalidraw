@@ -428,3 +428,27 @@ export function deconstructDiamondElement(
 
   return shape;
 }
+
+/**
+ * Extracts style properties from an element that can be copied to a new element.
+ * Useful when creating new elements based on an existing element's appearance.
+ *
+ * @param element The source element to copy style properties from
+ * @returns An object containing the style properties
+ */
+export function copyElementStyleProperties<T extends ExcalidrawElement>(
+  element: T,
+) {
+  return {
+    width: element.width,
+    height: element.height,
+    roundness: element.roundness,
+    roughness: element.roughness,
+    backgroundColor: element.backgroundColor,
+    strokeColor: element.strokeColor,
+    strokeWidth: element.strokeWidth,
+    opacity: element.opacity,
+    fillStyle: element.fillStyle,
+    strokeStyle: element.strokeStyle,
+  };
+}
